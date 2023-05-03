@@ -1,6 +1,6 @@
 <?php
-    $mahasiswa = ['Nama : Ronaldo','Nama : Messi', 'Nama : Rashford','Nama : Luke shaw','Nama : Shanco'];
+    $mahasiswa = ['Ronaldo',' Messi', ' Rashford',' Luke shaw',' Shanco'];
     for ($i=0; $i<count($mahasiswa); $i++) { 
-        echo $mahasiswa[$i]."<br>";
+        echo "Nama : $mahasiswa[$i]"."<br>";
     }
 ?>
