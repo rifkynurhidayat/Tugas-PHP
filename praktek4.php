@@ -20,6 +20,7 @@
     <h2>Daftar Nilai</h2>
 <table border="1" cellpadding="18" cellspacing="0" style="text-align: center;">
         <tr>
+            <td style=" font-weight: bold;">No</td>
             <td style=" font-weight: bold;">Nama</td>
             <td style=" font-weight: bold;">Tanggal Lahir</td>
             <td style=" font-weight: bold;">Umur</td>
@@ -29,9 +30,10 @@
             <td style=" font-weight: bold;">Hasil</td>
         </tr>
         <?php
+        $i=1;
         $json_string = file_get_contents('data.json');
         $json = json_decode($json_string,true);
-        foreach ($json as $data){
+         foreach ($json as $data){
             $tanggal_lahir = $data['tanggal_lahir'];
             $umur = new DateTime($tanggal_lahir);
             $sekarang = new DateTime();
@@ -48,10 +50,9 @@
             }else{
                 $hasil="E";
             }
-          
-
         ?>
         <tr>
+            <td><?= $i; ?></td>
             <td><?= $data["nama"]; ?></td>
             <td><?= $data["tanggal_lahir"]; ?></td>
             <td><?= $usia->y."&nbsp"."Tahun" ?></td>
@@ -60,6 +61,7 @@
             <td><?= $nilai; ?></td>
             <td><?= $hasil; ?></td>
         </tr>
+        <?php $i++; ?>
      <?php } ?>
     </table>
 </body>
